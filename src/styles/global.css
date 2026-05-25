@@ -1,0 +1,267 @@
+/* ============================================
+   MTMS — Design System Global
+   Multimodal Transport Monitoring System
+   ============================================ */
+
+:root {
+  /* Couleurs primaires */
+  --color-bg:          #0A0E1A;
+  --color-bg-surface:  #111827;
+  --color-bg-card:     #1A2235;
+  --color-bg-hover:    #1F2D42;
+  --color-border:      #2A3A52;
+  --color-border-light:#3A4A62;
+
+  /* Textes */
+  --color-text-primary:   #F0F4FF;
+  --color-text-secondary: #8A9BB5;
+  --color-text-muted:     #5A6A80;
+
+  /* Accent principal */
+  --color-accent:       #3B82F6;
+  --color-accent-hover: #2563EB;
+  --color-accent-glow:  rgba(59, 130, 246, 0.15);
+
+  /* Statuts */
+  --color-success:      #10B981;
+  --color-success-bg:   rgba(16, 185, 129, 0.1);
+  --color-warning:      #F59E0B;
+  --color-warning-bg:   rgba(245, 158, 11, 0.1);
+  --color-danger:       #EF4444;
+  --color-danger-bg:    rgba(239, 68, 68, 0.1);
+  --color-info:         #6366F1;
+  --color-info-bg:      rgba(99, 102, 241, 0.1);
+
+  /* Types de transport */
+  --color-train:  #3B82F6;
+  --color-avion:  #8B5CF6;
+  --color-bateau: #06B6D4;
+
+  /* Typographie */
+  --font-sans:  'DM Sans', sans-serif;
+  --font-mono:  'Space Mono', monospace;
+
+  /* Espacements */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Rayons */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* Ombres */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.5);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.6);
+
+  /* Sidebar */
+  --sidebar-width: 240px;
+  --sidebar-collapsed: 64px;
+
+  /* Header */
+  --header-height: 56px;
+
+  /* Transitions */
+  --transition: 0.2s ease;
+}
+
+/* ============ RESET ============ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body, #root {
+  height: 100%;
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+input, select, textarea { font-family: inherit; outline: none; }
+ul, ol { list-style: none; }
+
+/* ============ LAYOUT ============ */
+.app-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-left: var(--sidebar-width);
+  transition: margin-left var(--transition);
+}
+
+.app-main.sidebar-collapsed {
+  margin-left: var(--sidebar-collapsed);
+}
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-6);
+}
+
+/* ============ TYPOGRAPHIE ============ */
+h1 { font-size: 24px; font-weight: 600; }
+h2 { font-size: 20px; font-weight: 600; }
+h3 { font-size: 16px; font-weight: 500; }
+h4 { font-size: 14px; font-weight: 500; }
+
+.mono { font-family: var(--font-mono); }
+
+/* ============ CARTE (card) ============ */
+.card {
+  background: var(--color-bg-card);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-4);
+}
+
+.card-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+/* ============ BADGES ============ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.badge-success { background: var(--color-success-bg); color: var(--color-success); }
+.badge-warning { background: var(--color-warning-bg); color: var(--color-warning); }
+.badge-danger  { background: var(--color-danger-bg);  color: var(--color-danger); }
+.badge-info    { background: var(--color-info-bg);    color: var(--color-info); }
+.badge-muted   { background: rgba(90,106,128,0.2);    color: var(--color-text-secondary); }
+
+/* Types transport */
+.badge-train  { background: rgba(59,130,246,0.15); color: var(--color-train); }
+.badge-avion  { background: rgba(139,92,246,0.15); color: var(--color-avion); }
+.badge-bateau { background: rgba(6,182,212,0.15);  color: var(--color-bateau); }
+
+/* ============ BOUTONS ============ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--color-accent-hover); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-text-secondary);
+  border: 0.5px solid var(--color-border);
+}
+.btn-ghost:hover {
+  background: var(--color-bg-hover);
+  color: var(--color-text-primary);
+}
+
+.btn-danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 0.5px solid var(--color-danger);
+}
+
+.btn-sm { padding: 5px 10px; font-size: 12px; }
+.btn-lg { padding: 10px 20px; font-size: 15px; }
+
+/* ============ INPUTS ============ */
+.input {
+  width: 100%;
+  background: var(--color-bg-surface);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  color: var(--color-text-primary);
+  font-size: 13px;
+  transition: border-color var(--transition);
+}
+.input:focus { border-color: var(--color-accent); }
+.input::placeholder { color: var(--color-text-muted); }
+
+.select {
+  width: 100%;
+  background: var(--color-bg-surface);
+  border: 0.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
+  color: var(--color-text-primary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+/* ============ TABLE ============ */
+.table { width: 100%; border-collapse: collapse; }
+.table th {
+  text-align: left;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 12px;
+  border-bottom: 0.5px solid var(--color-border);
+}
+.table td {
+  padding: 12px 12px;
+  font-size: 13px;
+  color: var(--color-text-secondary);
+  border-bottom: 0.5px solid var(--color-border);
+}
+.table tr:hover td { background: var(--color-bg-hover); }
+
+/* ============ STATUT CONNEXION ============ */
+.dot-live {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--color-success);
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ============ SCROLLBAR ============ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 4px; }

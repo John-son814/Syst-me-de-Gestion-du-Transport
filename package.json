@@ -1,0 +1,28 @@
+{
+  "name": "mtms-frontend",
+  "version": "1.0.0",
+  "description": "Multimodal Transport Monitoring System — Frontend",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.22.0",
+    "leaflet": "^1.9.4",
+    "react-leaflet": "^4.2.1",
+    "axios": "^1.6.0",
+    "mqtt": "^5.3.4",
+    "socket.io-client": "^4.7.4",
+    "recharts": "^2.12.0",
+    "date-fns": "^3.3.1",
+    "zustand": "^4.5.0",
+    "clsx": "^2.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^5.1.4"
+  }
+}
